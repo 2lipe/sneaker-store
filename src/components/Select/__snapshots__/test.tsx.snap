@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports['<Select /> should be render Select correctly 1'] = `
+.c0 label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #8D8D8D;
+  margin-right: 0.8rem;
+}
+
+.c1 {
+  width: 6.9rem;
+  height: 2.7rem;
+  padding-left: 0.8rem;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #808080;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 2.5rem;
+}
+
+<div
+  class="c0"
+>
+  <label
+    for="sizes"
+  >
+    size
+  </label>
+  <select
+    class="c1"
+    id="sizes"
+  >
+    <option
+      value="38"
+    >
+      38
+    </option>
+    <option
+      value="39"
+    >
+      39
+    </option>
+  </select>
+</div>
+`;
+
+exports['<Select /> should be render Select with other options 1'] = `
+.c0 label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #8D8D8D;
+  margin-right: 0.8rem;
+}
+
+.c1 {
+  width: 6.9rem;
+  height: 2.7rem;
+  padding-left: 0.8rem;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #808080;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 2.5rem;
+}
+
+<div
+  class="c0"
+>
+  <label
+    for="sizes"
+  >
+    size
+  </label>
+  <select
+    class="c1"
+    data-testid="select"
+    id="sizes"
+  >
+    <option
+      value="38"
+    >
+      38
+    </option>
+    <option
+      value="39"
+    >
+      39
+    </option>
+  </select>
+</div>
+`;

@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports['<PaymentCard /> should be render card correctly 1'] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  height: 7.5rem;
+  width: 90%;
+  border-radius: 1.08rem;
+  padding: 0 3.2rem;
+  cursor: pointer;
+}
+
+.c1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #535353;
+}
+
+.c2 {
+  height: 2.9rem;
+}
+
+@media (max-width:414px) {
+  .c0 {
+    padding: 0 2.4rem;
+  }
+}
+
+@media (max-width:414px) {
+  .c1 {
+    font-size: 1.4rem;
+    margin-right: 1.5rem;
+    margin-left: -1.5rem;
+  }
+}
+
+@media (max-width:414px) {
+  .c2 {
+    width: 12rem;
+    height: 2.1rem;
+  }
+
+  .c2 img {
+    width: 14rem;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h2
+    class="c1"
+  >
+    Banking Payment
+  </h2>
+  <div
+    class="c2"
+  >
+    <img
+      alt="Payment methods"
+      src="card"
+    />
+  </div>
+</div>
+`;
+
+exports['<PaymentCard /> should be render card with promotionBorder 1'] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  height: 7.5rem;
+  width: 90%;
+  border-radius: 1.08rem;
+  padding: 0 3.2rem;
+  cursor: pointer;
+  border: 1px solid #61CB46;
+}
+
+.c1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #535353;
+}
+
+.c2 {
+  height: 2.9rem;
+}
+
+@media (max-width:414px) {
+  .c0 {
+    padding: 0 2.4rem;
+  }
+}
+
+@media (max-width:414px) {
+  .c0 {
+    border: 2px solid #61CB46;
+  }
+}
+
+@media (max-width:414px) {
+  .c1 {
+    font-size: 1.4rem;
+    margin-right: 1.5rem;
+    margin-left: -1.5rem;
+  }
+}
+
+@media (max-width:414px) {
+  .c2 {
+    width: 12rem;
+    height: 2.1rem;
+  }
+
+  .c2 img {
+    width: 14rem;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h2
+    class="c1"
+  >
+    Banking Payment
+  </h2>
+  <div
+    class="c2"
+  >
+    <img
+      alt="Payment methods"
+      src="card"
+    />
+  </div>
+</div>
+`;
