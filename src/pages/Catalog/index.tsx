@@ -1,3 +1,4 @@
+/* eslint-disable function-paren-newline */
 import React, { useCallback, useEffect, useState } from 'react';
 import { useSneakerAsyncActions } from '../../contexts/Sneaker/sneakerActions';
 import { ISneakers } from '../../models/Interfaces/ISneakers';
@@ -5,6 +6,7 @@ import { ProductCatalog } from '../../templates/ProductCatalog';
 
 export const Catalog = () => {
   const [sneakers, setSneakers] = useState<ISneakers[]>([]);
+
   const { getSneakersAction } = useSneakerAsyncActions();
 
   const getSneakers = useCallback(async () => {
@@ -24,7 +26,7 @@ export const Catalog = () => {
 
   return (
     <div>
-      <ProductCatalog products={sneakers} />
+      <ProductCatalog sneakers={sneakers} />
     </div>
   );
 };

@@ -8,11 +8,9 @@ import { Chip } from '.';
 
 describe('<Chip />', () => {
   it('should be render the button with text', () => {
-    const { container } = renderWithTheme(<Chip text="Back" />);
+    renderWithTheme(<Chip text="Back" />);
 
     expect(screen.getByText(/Back/i)).toBeInTheDocument();
-
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should be render an icon version', () => {

@@ -10,6 +10,8 @@ export const Wrapper = styled.article`
     width: 100%;
     height: 100%;
 
+    min-width: 30rem;
+
     border-radius: ${theme.border.radius01} ${theme.border.radius01} 0 0;
 
     background-color: ${theme.colors.white};

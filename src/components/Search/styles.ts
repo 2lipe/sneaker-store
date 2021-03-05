@@ -6,7 +6,7 @@ export const Wrapper = styled.form`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 75%;
+    width: 80%;
 
     margin: ${theme.spacings.small} ${theme.spacings.xxsmall};
     border-bottom: 1px solid ${theme.colors.gray04};
@@ -14,6 +14,7 @@ export const Wrapper = styled.form`
 
     @media ${Media.minWidth.xl} {
       margin: ${theme.spacings.small} auto;
+      width: 80%;
 
       padding-left: ${theme.spacings.small};
     }
