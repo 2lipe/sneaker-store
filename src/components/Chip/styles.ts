@@ -30,6 +30,7 @@ export const Wrapper = styled.button<WrapperProps>`
     text-decoration: none;
     border: none;
     outline: none;
+    cursor: pointer;
 
     width: 11.5rem;
     height: 3.4rem;

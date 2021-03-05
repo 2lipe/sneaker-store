@@ -12,7 +12,7 @@ export const Wrapper = styled.article`
 
     min-width: 30rem;
 
-    border-radius: ${theme.border.radius01} ${theme.border.radius01} 0 0;
+    border-radius: ${theme.border.radius02} ${theme.border.radius02} 0 0;
 
     background-color: ${theme.colors.white};
     box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.05);
@@ -20,20 +20,21 @@ export const Wrapper = styled.article`
 `;
 
 export const ImageBox = styled.div`
-  height: 17rem;
+  height: 25rem;
   width: 100%;
 
   background: #f6f7f8;
   background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
 
-  background-size: 80rem 17rem;
-
   animation: ${placeholderShimmer} 1s linear infinite forwards;
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    ${({ theme }) => css`
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: ${theme.border.radius01} ${theme.border.radius01} 0 0;
+    `}
   }
 `;
 

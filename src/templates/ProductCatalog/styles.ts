@@ -9,6 +9,7 @@ export const FormContainer = styled(Form)`
     display: flex;
     justify-content: center;
     margin-top: ${theme.spacings.huge};
+    margin-bottom: ${theme.spacings.large};
 
     @media ${Media.maxWidth.md} {
       margin-top: ${theme.spacings.xxsmall};

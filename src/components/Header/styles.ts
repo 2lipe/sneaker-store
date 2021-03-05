@@ -4,7 +4,7 @@ import { Media } from '../../utils/helpers/media-helper';
 export const Wrapper = styled.header`
   ${({ theme }) => css`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
     height: 8.7rem;
@@ -18,18 +18,30 @@ export const Wrapper = styled.header`
   `}
 `;
 
-export const BackButton = styled.div``;
+export const BackButton = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    margin-left: ${theme.spacings.xlarge};
+    cursor: pointer;
 
-export const TitleWrapper = styled.div``;
+    left: 0rem;
+
+    @media ${Media.maxWidth.md} {
+      left: -4rem;
+    }
+  `}
+`;
+
+export const TitleWrapper = styled.div`
+  position: absolute;
+  margin: 0 auto;
+`;
 
 export const Title = styled.h1`
   ${({ theme }) => css`
-    position: relative;
-    left: 48vw;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: ${theme.font.normal};
     font-size: ${theme.font.sizes.xxlarge};
-
     color: ${theme.colors.black};
 
     @media ${Media.maxWidth.md} {
@@ -39,9 +51,11 @@ export const Title = styled.h1`
 `;
 
 export const Avatar = styled.div`
+  position: absolute;
   width: 3.4rem;
   height: 3.4rem;
   margin-right: 10.8rem;
+  right: 0rem;
 
   border-radius: 50%;
 
@@ -50,6 +64,6 @@ export const Avatar = styled.div`
   }
 
   @media ${Media.maxWidth.md} {
-    margin-right: 1.4rem;
+    right: -8rem;
   }
 `;

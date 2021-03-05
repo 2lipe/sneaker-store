@@ -1,9 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { ArrowBack } from '@styled-icons/boxicons-regular/ArrowBack';
 
 import { Header, HeaderProps } from '.';
-import { Chip } from '../Chip';
 
 export default {
   title: 'Header',
@@ -21,5 +19,5 @@ export const WithBackButton: Story<HeaderProps> = args => <Header {...args} />;
 WithBackButton.args = {
   title: 'Sneakers',
   avatar: '/img/avatar.png',
-  back: <Chip text="Back" icon={<ArrowBack />} />,
+  back: true,
 };

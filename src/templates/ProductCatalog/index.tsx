@@ -9,11 +9,8 @@ import { FormHandles } from '@unform/core';
 
 import { ISneakers } from '../../models/Interfaces/ISneakers';
 import { Search } from '../../components/Search';
-import { Header } from '../../components/Header';
 import { ShoesCard } from '../../components/ShoesCard';
 import { qtdOpt, sizeOpt } from './options';
-
-import avatarImage from '../../assets/img/avatar.png';
 
 import * as S from './styles';
 
@@ -55,8 +52,6 @@ export const ProductCatalog = ({ sneakers, addProductOnClick }: ProductCatalogPr
 
   return (
     <S.Wrapper>
-      <Header title="Sneakers" avatar={avatarImage} />
-
       <S.FormContainer ref={formRef} onSubmit={e => handleStoreSearch(e)}>
         <Search name="search" handleSearch={handleStoreSearch} />
       </S.FormContainer>
