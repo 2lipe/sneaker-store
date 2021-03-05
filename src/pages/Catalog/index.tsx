@@ -1,11 +1,15 @@
 /* eslint-disable function-paren-newline */
 import React, { useCallback, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { useSneakerAsyncActions } from '../../contexts/Sneaker/sneakerActions';
 import { ISneakers } from '../../models/Interfaces/ISneakers';
 import { ProductCatalog } from '../../templates/ProductCatalog';
 
-export const Catalog = () => {
+const Catalog = () => {
   const [sneakers, setSneakers] = useState<ISneakers[]>([]);
+
+  const history = useHistory();
 
   const { getSneakersAction } = useSneakerAsyncActions();
 
@@ -19,6 +23,10 @@ export const Catalog = () => {
     }
   }, [getSneakersAction]);
 
+  const handleClickAddProduct = (id: string) => {
+    history.push(`/store-checkout/${id}`);
+  };
+
   useEffect(() => {
     getSneakers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -26,7 +34,9 @@ export const Catalog = () => {
 
   return (
     <div>
-      <ProductCatalog sneakers={sneakers} />
+      <ProductCatalog addProductOnClick={e => handleClickAddProduct(e)} sneakers={sneakers} />
     </div>
   );
 };
+
+export default Catalog;

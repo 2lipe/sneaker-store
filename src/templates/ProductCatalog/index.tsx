@@ -19,9 +19,10 @@ import * as S from './styles';
 
 type ProductCatalogProps = {
   sneakers: ISneakers[];
+  addProductOnClick: (id: string) => void;
 };
 
-export const ProductCatalog = ({ sneakers }: ProductCatalogProps) => {
+export const ProductCatalog = ({ sneakers, addProductOnClick }: ProductCatalogProps) => {
   const formRef = useRef<FormHandles>(null);
   const [search, setSearch] = useState<string>('');
 
@@ -47,6 +48,7 @@ export const ProductCatalog = ({ sneakers }: ProductCatalogProps) => {
         selectSizeLabel="Size"
         selectQtdName="quantity"
         selectSizeName="size"
+        addProduct={() => addProductOnClick(sneaker.id)}
       />
     ));
   };
@@ -75,6 +77,7 @@ export const ProductCatalog = ({ sneakers }: ProductCatalogProps) => {
                   selectSizeLabel="Size"
                   selectQtdName="quantity"
                   selectSizeName="size"
+                  addProduct={() => addProductOnClick(sneaker.id)}
                 />
               ))
             : renderSelectSneaker()}

@@ -17,7 +17,7 @@ export type ShoesCardProps = {
   selectQtdLabel: string;
   qtdOptions: Array<{ value: string; label: string }>;
 
-  onClick?: () => void;
+  addProduct?: () => void;
 };
 
 export const ShoesCard = ({
@@ -30,7 +30,7 @@ export const ShoesCard = ({
   selectQtdName,
   selectQtdLabel,
   qtdOptions,
-  onClick,
+  addProduct,
   ...rest
 }: ShoesCardProps) => (
   <S.Wrapper {...rest}>
@@ -48,7 +48,7 @@ export const ShoesCard = ({
 
       <S.BuyBox>
         <S.Price>{price}</S.Price>
-        <Button size="medium" onClick={onClick}>
+        <Button size="medium" onClick={addProduct}>
           Add to cart
         </Button>
       </S.BuyBox>
