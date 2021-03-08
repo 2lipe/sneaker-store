@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { ButtonHTMLAttributes, ElementType, HTMLAttributes, MutableRefObject, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, ElementType, HTMLAttributes, ReactNode } from 'react';
 import * as S from './styles';
 
 import { Ribbon } from '../Ribbon';
