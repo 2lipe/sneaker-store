@@ -26,6 +26,7 @@ export const Wrapper = styled.button<WrapperProps>`
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     border: none;
     text-decoration: none;

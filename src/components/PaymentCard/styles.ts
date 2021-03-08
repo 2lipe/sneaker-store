@@ -19,6 +19,7 @@ export const Wrapper = styled.div<WrapperProps>`
     justify-content: space-between;
     align-items: center;
     background-color: ${theme.colors.white};
+    margin-bottom: ${theme.spacings.xsmall};
 
     height: 7.5rem;
     width: 90%;

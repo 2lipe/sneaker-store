@@ -4,15 +4,16 @@ import { ArrowBack } from '@styled-icons/boxicons-regular/ArrowBack';
 import { useHistory } from 'react-router-dom';
 import { Chip } from '../Chip';
 
+import avatarImage from '../../assets/img/avatar.png';
+
 import * as S from './styles';
 
 export type HeaderProps = {
   title: string;
-  avatar: string;
   back?: boolean;
 };
 
-export const Header = ({ title, avatar, back }: HeaderProps) => {
+export const Header = ({ title, back }: HeaderProps) => {
   const history = useHistory();
 
   const handleClickTurnBack = useCallback(() => {
@@ -28,7 +29,7 @@ export const Header = ({ title, avatar, back }: HeaderProps) => {
       </S.TitleWrapper>
 
       <S.Avatar>
-        <img src={avatar} alt="Avatar image" />
+        <img src={avatarImage} alt="Avatar image" />
       </S.Avatar>
     </S.Wrapper>
   );

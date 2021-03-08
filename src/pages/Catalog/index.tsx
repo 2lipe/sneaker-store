@@ -8,8 +8,6 @@ import { useSneakerAsyncActions } from '../../contexts/Sneaker/sneakerActions';
 import { ISneakers } from '../../models/Interfaces/ISneakers';
 import { ProductCatalog } from '../../templates/ProductCatalog';
 
-import avatarImage from '../../assets/img/avatar.png';
-
 const Catalog = () => {
   const [sneakers, setSneakers] = useState<ISneakers[]>([]);
   const history = useHistory();
@@ -37,7 +35,7 @@ const Catalog = () => {
 
   return (
     <div>
-      <Header title="Sneakers" avatar={avatarImage} />
+      <Header title="Sneakers" />
 
       <ProductCatalog addProductOnClick={e => handleClickAddProduct(e)} sneakers={sneakers} />
     </div>

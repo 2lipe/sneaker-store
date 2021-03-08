@@ -18,6 +18,5 @@ export const WithBackButton: Story<HeaderProps> = args => <Header {...args} />;
 
 WithBackButton.args = {
   title: 'Sneakers',
-  avatar: '/img/avatar.png',
   back: true,
 };

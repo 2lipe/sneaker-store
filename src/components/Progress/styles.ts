@@ -45,9 +45,9 @@ export const Wrapper = styled.main`
     }
 
     div {
-      height: ${theme.spacings.xxsmall};
-      width: ${theme.spacings.xxsmall};
-      border-radius: ${theme.border.radius05};
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
     }
   `}
 `;
