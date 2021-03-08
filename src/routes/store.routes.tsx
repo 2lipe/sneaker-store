@@ -7,9 +7,12 @@ import CatalogPage from '../pages/Catalog';
 
 const CheckoutPage = lazy(() => import('../pages/Checkout/'));
 
+const ConfirmationPage = lazy(() => import('../pages/Confirmation/'));
+
 export const STORE_PATH = {
   Catalog: '/',
   Checkout: '/store-checkout/:id',
+  Confirmation: '/confirmation',
 } as const;
 
 export const ApplicationStoreRoutes = () => {
@@ -18,6 +21,8 @@ export const ApplicationStoreRoutes = () => {
       <Route exact path={STORE_PATH.Catalog} component={CatalogPage} />
 
       <Route exact path={STORE_PATH.Checkout} component={CheckoutPage} />
+
+      <Route exact path={STORE_PATH.Confirmation} component={ConfirmationPage} />
     </Switch>
   );
 

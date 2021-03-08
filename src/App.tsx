@@ -1,5 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { SnackbarProvider } from 'notistack';
+
 import { SneakerProvider } from './contexts/Sneaker/sneakerContext';
 import { Routes } from './routes/routes';
 
@@ -10,8 +12,10 @@ function App() {
   return (
     <SneakerProvider>
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Routes />
+        <SnackbarProvider maxSnack={3} autoHideDuration={5000} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
+          <GlobalStyles />
+          <Routes />
+        </SnackbarProvider>
       </ThemeProvider>
     </SneakerProvider>
   );

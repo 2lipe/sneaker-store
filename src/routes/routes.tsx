@@ -12,6 +12,8 @@ export const Routes = () => {
         <Route exact path={STORE_PATH.Catalog} component={ApplicationStoreRoutes} />
 
         <Route exact path={STORE_PATH.Checkout} component={ApplicationStoreRoutes} />
+
+        <Route exact path={STORE_PATH.Confirmation} component={ApplicationStoreRoutes} />
       </Switch>
     </BrowserRouter>
   );

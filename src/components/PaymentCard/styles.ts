@@ -14,7 +14,7 @@ const WrapperModifiers = {
 };
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, promotionBorder }) => css`
+  ${({ theme, checked }) => css`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +32,7 @@ export const Wrapper = styled.div<WrapperProps>`
       padding: 0 ${theme.spacings.small};
     }
 
-    ${!!promotionBorder && WrapperModifiers.promotionBorder(theme)};
+    ${!!checked && WrapperModifiers.promotionBorder(theme)};
   `}
 `;
 

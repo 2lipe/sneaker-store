@@ -1,5 +1,5 @@
-/* eslint-disable max-len */
-import React, { useCallback } from 'react';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 import { useSneakerContext } from '../../contexts/Sneaker/sneakerContext';
@@ -8,25 +8,13 @@ import { Header } from '../../components/Header';
 import { Progress } from '../../components/Progress';
 import { PaymentMethodCard } from '../../components/PaymentMethodCard';
 
-import { usePayWithMyBankService } from '../../services/payment.service';
-
 import * as S from './styles';
 
-const Checkout = ({ location }: RouteComponentProps) => {
+const Confirmation = ({ location }: RouteComponentProps) => {
   const [, , sneakerId] = location.pathname.split('/');
   const { state } = useSneakerContext();
 
-  const { addPanelListener, paymentMethodConection } = usePayWithMyBankService();
-
   const sneakerSelected = state.sneaker.filter(item => item.id === sneakerId);
-
-  const handleClickConfirmPaymentMethod = useCallback(
-    (paymentMethod: string, productPrice: string) => {
-      paymentMethodConection(paymentMethod, productPrice);
-      addPanelListener();
-    },
-    [addPanelListener, paymentMethodConection],
-  );
 
   return (
     <S.Wrapper>
@@ -47,7 +35,7 @@ const Checkout = ({ location }: RouteComponentProps) => {
           <S.PaymentContainer>
             <S.PaymentMethods>
               <PaymentMethodCard
-                onClickConfirmPayment={payment => handleClickConfirmPaymentMethod(payment, sneakerSelected[0].price)}
+                onClickConfirmPayment={e => console.log(e)}
                 id={sneakerSelected[0].id}
                 description={sneakerSelected[0].description}
                 color={sneakerSelected[0].color}
@@ -61,4 +49,4 @@ const Checkout = ({ location }: RouteComponentProps) => {
   );
 };
 
-export default Checkout;
+export default Confirmation;
