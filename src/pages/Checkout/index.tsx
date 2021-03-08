@@ -11,6 +11,7 @@ import { PaymentMethodCard } from '../../components/PaymentMethodCard';
 import { usePayWithMyBankService } from '../../services/payment.service';
 
 import * as S from './styles';
+import { storeSneaker } from '../../utils/helpers/local-storage-helper';
 
 const Checkout = ({ location }: RouteComponentProps) => {
   const [, , sneakerId] = location.pathname.split('/');
@@ -24,8 +25,9 @@ const Checkout = ({ location }: RouteComponentProps) => {
     (paymentMethod: string, productPrice: string) => {
       paymentMethodConection(paymentMethod, productPrice);
       addPanelListener();
+      storeSneaker(sneakerSelected[0]);
     },
-    [addPanelListener, paymentMethodConection],
+    [addPanelListener, paymentMethodConection, sneakerSelected],
   );
 
   return (

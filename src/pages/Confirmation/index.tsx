@@ -1,45 +1,63 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import React, { useCallback, useEffect, useState } from 'react';
 
-import { useSneakerContext } from '../../contexts/Sneaker/sneakerContext';
+import { useHistory } from 'react-router';
+import { useSnackbar } from 'notistack';
+import { ISneakers } from '../../models/Interfaces/ISneakers';
 
 import { Header } from '../../components/Header';
 import { Progress } from '../../components/Progress';
-import { PaymentMethodCard } from '../../components/PaymentMethodCard';
+import { ConfirmationCard } from '../../components/ConfirmationCard';
+import { getStoreSneaker } from '../../utils/helpers/local-storage-helper';
 
 import * as S from './styles';
+import { STORE_PATH } from '../../routes/store.routes';
 
-const Confirmation = ({ location }: RouteComponentProps) => {
-  const [, , sneakerId] = location.pathname.split('/');
-  const { state } = useSneakerContext();
+const Confirmation = () => {
+  const [sneaker, setSneaker] = useState<ISneakers>({} as ISneakers);
 
-  const sneakerSelected = state.sneaker.filter(item => item.id === sneakerId);
+  const { enqueueSnackbar } = useSnackbar();
+  const history = useHistory();
+
+  const handleClickPlaceOrder = useCallback(() => {
+    enqueueSnackbar('Thanks for purchasing in Trustly store!', { variant: 'success' });
+
+    setTimeout(() => {
+      history.push(STORE_PATH.Catalog);
+    }, 5000);
+  }, [enqueueSnackbar, history]);
+
+  useEffect(() => {
+    const data = getStoreSneaker();
+
+    setSneaker(data!);
+  }, []);
 
   return (
     <S.Wrapper>
-      <Header back title="Checkout" />
+      <Header back title="Review and Confirmation" />
 
       <S.Content>
         <S.ProgressWrapper>
-          <Progress />
+          <Progress checkoutPage />
         </S.ProgressWrapper>
 
         <S.PaymentWrapper>
           <S.ImageContainer>
             <S.ProductImage>
-              <img src={sneakerSelected[0].thumbnailURL} alt={sneakerSelected[0].description} />
+              <img src={sneaker.thumbnailURL} alt={sneaker.description} />
             </S.ProductImage>
           </S.ImageContainer>
 
           <S.PaymentContainer>
             <S.PaymentMethods>
-              <PaymentMethodCard
-                onClickConfirmPayment={e => console.log(e)}
-                id={sneakerSelected[0].id}
-                description={sneakerSelected[0].description}
-                color={sneakerSelected[0].color}
-                price={sneakerSelected[0].price}
+              <ConfirmationCard
+                onClick={handleClickPlaceOrder}
+                id={sneaker.id}
+                description={sneaker.description}
+                color={sneaker.color}
+                price={sneaker.price}
               />
             </S.PaymentMethods>
           </S.PaymentContainer>
