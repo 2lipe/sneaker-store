@@ -1,15 +1,16 @@
+/* eslint-disable max-len */
 import React from 'react';
 
 import * as S from './styles';
 
-export type OrderSummaryMobileProps = {
+export type OrderSummaryCardMobileProps = {
   id: string;
   image: string;
   sneaker: string;
   color: string;
 };
 
-export const OrderSummaryMobile = ({ id, image, sneaker, color }: OrderSummaryMobileProps) => (
+export const OrderSummaryCardMobile = ({ id, image, sneaker, color }: OrderSummaryCardMobileProps) => (
   <S.Wrapper>
     <S.Title>Order Summary</S.Title>
 
