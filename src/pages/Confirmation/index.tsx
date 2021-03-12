@@ -13,6 +13,9 @@ import { getStoreSneaker } from '../../utils/helpers/local-storage-helper';
 
 import * as S from './styles';
 import { STORE_PATH } from '../../routes/store.routes';
+import MediaMatch from '../../components/MediaMatch';
+import { OrderSummaryCardMobile } from '../../components/OrderSummaryCardMobile';
+import { PaymentMethodCardMobile } from '../../components/PaymentMethodCardMobile';
 
 const Confirmation = () => {
   const [sneaker, setSneaker] = useState<ISneakers>({} as ISneakers);
@@ -62,6 +65,20 @@ const Confirmation = () => {
             </S.PaymentMethods>
           </S.PaymentContainer>
         </S.PaymentWrapper>
+
+        <MediaMatch lessThan="medium">
+          <S.PaymentContainerMobile>
+            <S.ReviewTitle>Review and confirmation</S.ReviewTitle>
+            <OrderSummaryCardMobile
+              id={sneaker.id}
+              color={sneaker.color}
+              image={sneaker.thumbnailURL}
+              sneaker={sneaker.description}
+            />
+
+            <PaymentMethodCardMobile price={sneaker.price} onClick={handleClickPlaceOrder} />
+          </S.PaymentContainerMobile>
+        </MediaMatch>
       </S.Content>
     </S.Wrapper>
   );

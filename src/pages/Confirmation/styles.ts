@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
+import { Media } from '../../utils/helpers/media-helper';
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -30,6 +32,8 @@ export const PaymentWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+
+  ${media.lessThan('medium')` display: none `}
 `;
 
 export const ImageContainer = styled.div`
@@ -73,5 +77,34 @@ export const PaymentMethods = styled.div`
     width: 95%;
     margin: 0 auto;
     background-color: ${theme.colors.gray02};
+  `}
+`;
+
+export const PaymentContainerMobile = styled.div`
+  margin-top: -30rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media ${Media.maxHeight.lg} {
+    margin-top: -20rem;
+  }
+
+  @media ${Media.maxHeight.md} {
+    margin-top: 0rem;
+  }
+
+  @media (max-height: 650px) {
+    margin-top: 8rem;
+  }
+`;
+
+export const ReviewTitle = styled.h1`
+  ${({ theme }) => css`
+    font-weight: ${theme.font.normal};
+    font-size: ${theme.font.sizes.xlarge};
+    margin-bottom: ${theme.spacings.xsmall};
   `}
 `;

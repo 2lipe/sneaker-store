@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
     height: 24rem;
     width: 90%;
     justify-content: center;
+    margin-bottom: ${theme.spacings.large};
 
     > h2 {
       margin-left: 1rem;
