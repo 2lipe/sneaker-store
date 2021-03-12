@@ -64,6 +64,7 @@ const Checkout = ({ location }: RouteComponentProps) => {
 
         <MediaMatch lessThan="medium">
           <S.PaymentContainerMobile>
+            <S.CheckoutTitle>Checkout</S.CheckoutTitle>
             <PaymentCardMobile
               id={sneakerSelected[0].id}
               price={sneakerSelected[0].price}
@@ -72,6 +73,7 @@ const Checkout = ({ location }: RouteComponentProps) => {
               sneaker={sneakerSelected[0].description}
             />
 
+            <S.PaymentTitle>Payment method</S.PaymentTitle>
             <PaymentCardMethodMobile
               onClickConfirmPayment={payment => handleClickConfirmPaymentMethod(payment, sneakerSelected[0].price)}
             />

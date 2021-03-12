@@ -88,11 +88,32 @@ export const PaymentContainerMobile = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media ${Media.maxHeight.lg} {
+    margin-top: -20rem;
+  }
+
   @media ${Media.maxHeight.md} {
-    margin-top: -15rem;
+    margin-top: 0rem;
   }
 
   @media (max-height: 650px) {
-    margin-top: -5rem;
+    margin-top: 8rem;
   }
+`;
+
+export const CheckoutTitle = styled.h1`
+  ${({ theme }) => css`
+    font-weight: ${theme.font.normal};
+    font-size: ${theme.font.sizes.xlarge};
+    margin-bottom: ${theme.spacings.xsmall};
+  `}
+`;
+
+export const PaymentTitle = styled.h2`
+  ${({ theme }) => css`
+    font-weight: ${theme.font.normal};
+    font-size: ${theme.font.sizes.xlarge};
+    margin-top: ${theme.spacings.large};
+    margin-bottom: -1.5rem;
+  `}
 `;
