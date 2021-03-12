@@ -27,6 +27,7 @@ export const Wrapper = styled.button<WrapperProps>`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-bottom: 2rem;
 
     border: none;
     text-decoration: none;

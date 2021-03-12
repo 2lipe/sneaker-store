@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 import { Media } from '../../utils/helpers/media-helper';
 
 export const Wrapper = styled.main`
@@ -14,9 +15,7 @@ export const Wrapper = styled.main`
     background-color: ${theme.colors.gray02};
     position: relative;
 
-    @media ${Media.maxWidth.ms} {
-      display: none;
-    }
+    ${media.lessThan('medium')` display: none `}
 
     li {
       display: flex;

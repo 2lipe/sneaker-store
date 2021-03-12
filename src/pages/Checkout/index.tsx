@@ -3,15 +3,18 @@ import React, { useCallback } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 import { useSneakerContext } from '../../contexts/Sneaker/sneakerContext';
+import { storeSneaker } from '../../utils/helpers/local-storage-helper';
 
 import { Header } from '../../components/Header';
 import { Progress } from '../../components/Progress';
 import { PaymentMethodCard } from '../../components/PaymentMethodCard';
+import MediaMatch from '../../components/MediaMatch';
+import { PaymentCardMobile } from '../../components/PaymentCardMobile';
+import { PaymentCardMethodMobile } from '../../components/PaymentCardMethodMobile';
 
 import { usePayWithMyBankService } from '../../services/payment.service';
 
 import * as S from './styles';
-import { storeSneaker } from '../../utils/helpers/local-storage-helper';
 
 const Checkout = ({ location }: RouteComponentProps) => {
   const [, , sneakerId] = location.pathname.split('/');
@@ -58,6 +61,22 @@ const Checkout = ({ location }: RouteComponentProps) => {
             </S.PaymentMethods>
           </S.PaymentContainer>
         </S.PaymentWrapper>
+
+        <MediaMatch lessThan="medium">
+          <S.PaymentContainerMobile>
+            <PaymentCardMobile
+              id={sneakerSelected[0].id}
+              price={sneakerSelected[0].price}
+              color={sneakerSelected[0].color}
+              image={sneakerSelected[0].thumbnailURL}
+              sneaker={sneakerSelected[0].description}
+            />
+
+            <PaymentCardMethodMobile
+              onClickConfirmPayment={payment => handleClickConfirmPaymentMethod(payment, sneakerSelected[0].price)}
+            />
+          </S.PaymentContainerMobile>
+        </MediaMatch>
       </S.Content>
     </S.Wrapper>
   );
