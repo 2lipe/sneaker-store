@@ -37,6 +37,7 @@ export const Input = styled.input`
     font-weight: ${theme.font.light};
     margin-left: 0.5rem;
     outline: none;
+    text-align: center;
 
     &::placeholder {
       color: ${theme.colors.gray06};

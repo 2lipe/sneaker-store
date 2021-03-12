@@ -43,20 +43,10 @@ export const SneakersWrapper = styled.div`
   }
 
   @media ${Media.maxWidth.md} {
-    grid-template-columns: repeat(1, 20vw);
-    grid-gap: 3% 60%;
-    margin-right: 30%;
-  }
-
-  @media ${Media.maxWidth.sm} {
-    grid-template-columns: repeat(1, 20vw);
-    grid-gap: 3% 60%;
-    margin-right: 50%;
-  }
-
-  @media ${Media.maxWidth.xs} {
-    grid-template-columns: repeat(1, 20vw);
-    grid-gap: 3% 60%;
-    margin-right: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
   }
 `;
