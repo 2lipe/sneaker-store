@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { placeholderShimmer } from '../../utils/animations/keyframes';
+import { Media } from '../../utils/helpers/media-helper';
 
 export const Wrapper = styled.article`
   ${({ theme }) => css`
@@ -16,6 +17,10 @@ export const Wrapper = styled.article`
 
     background-color: ${theme.colors.white};
     box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.05);
+
+    @media ${Media.maxWidth.md} {
+      margin-bottom: ${theme.spacings.large};
+    }
   `}
 `;
 
