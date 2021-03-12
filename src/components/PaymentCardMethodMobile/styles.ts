@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    height: 24rem;
+    height: 30rem;
     width: 90%;
 
     border-radius: ${theme.border.radius02};
@@ -12,8 +12,17 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const ButtonContainer = styled.div`
+export const PaymentCardContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+`;
+
+export const ButtonContainer = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
   margin-right: 5rem;
 `;

@@ -37,24 +37,26 @@ export const PaymentCardMethodMobile = ({ onClickConfirmPayment }: PaymentCardMe
   return (
     <div>
       <S.Wrapper>
-        <PaymentCard
-          onClick={() => handleClickSelectPaymentMethod('online-payment')}
-          title="Online Banking"
-          img={onlinePayImage}
-          checked={checked}
-        />
+        <S.PaymentCardContainer>
+          <PaymentCard
+            onClick={() => handleClickSelectPaymentMethod('online-payment')}
+            title="Online Banking"
+            img={onlinePayImage}
+            checked={checked}
+          />
 
-        <PaymentCard
-          onClick={() => handleClickSelectPaymentMethod('card-payment')}
-          title="Card payment"
-          img={cardPayImage}
-        />
+          <PaymentCard
+            onClick={() => handleClickSelectPaymentMethod('card-payment')}
+            title="Card payment"
+            img={cardPayImage}
+          />
 
-        <PaymentCard
-          onClick={() => handleClickSelectPaymentMethod('apple-payment')}
-          title="Apple Pay"
-          img={applePayImage}
-        />
+          <PaymentCard
+            onClick={() => handleClickSelectPaymentMethod('apple-payment')}
+            title="Apple Pay"
+            img={applePayImage}
+          />
+        </S.PaymentCardContainer>
       </S.Wrapper>
 
       <S.ButtonContainer>
