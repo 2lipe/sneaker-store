@@ -32,7 +32,7 @@ Foi utilizado também o styled-components como lib de estilo, para facilitar e o
 
 # :computer: Frontend
 
-Após clonar o repositório, entre na pasta `challenge-trustly-store ` e instale todas as dependências utilizando o comando:
+Após clonar o repositório, entre na pasta `sneaker-store ` e instale todas as dependências utilizando o comando:
 
 ```bash
 # Digite o comando abaixo para instalar as dependências:
