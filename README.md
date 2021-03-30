@@ -1,12 +1,8 @@
-<h1 align="center">
-    <img alt="Stone" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Trustly-logo.png" width="200px" />
-</h1>
-
 <h3 align="center">
-  Trustly Store
+  Sneaker Store
 </h3>
 
-<p align="center">Este desafio se propós a realizar a integração do serviço de pagamento PayWithMyBank e a criação de pequeno E-Commerce</p>
+<p align="center">Este projeto se propós a realizar a integração do serviço de pagamento PayWithMyBank e a criação de pequeno E-Commerce o Sneaker Store</p>
 
 <p align="center">
   <a href="#computer-frontend">Frontend</a>
@@ -36,8 +32,7 @@ Foi utilizado também o styled-components como lib de estilo, para facilitar e o
 
 # :computer: Frontend
 
-Após clonar o repositório, entre na pasta `challenge-trustly-store
-` e instale todas as dependências utilizando o comando:
+Após clonar o repositório, entre na pasta `challenge-trustly-store ` e instale todas as dependências utilizando o comando:
 
 ```bash
 # Digite o comando abaixo para instalar as dependências:
